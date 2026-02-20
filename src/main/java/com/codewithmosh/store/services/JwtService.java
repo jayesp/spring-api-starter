@@ -24,8 +24,11 @@ public class JwtService {
     }
 
     private String generateToken(User user, long tokenExpiration) {
-        return Jwts.builder().subject(user.getId().toString()).claim("email", user.getEmail())
+        return Jwts.builder()
+                .subject(user.getId().toString())
+                .claim("email", user.getEmail())
                 .claim("name", user.getName()).issuedAt(new Date())
+                .claim("role", user.getRole())
                 .expiration(new Date(System.currentTimeMillis() + 1000 * tokenExpiration))
                 .signWith(jwtConfig.getSecretKey()).compact();
     }
