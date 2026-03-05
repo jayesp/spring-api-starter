@@ -6,11 +6,11 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 @Getter
 @Setter
 public class Order {
@@ -34,6 +34,6 @@ public class Order {
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
-    @OneToMany(mappedBy = "order_items")
-    private Set<OrderItems> items = new HashSet<>();
+    @OneToMany(mappedBy = "order", cascade = CascadeType.PERSIST)
+    private Set<OrderItem> items = new LinkedHashSet<>();
 }
