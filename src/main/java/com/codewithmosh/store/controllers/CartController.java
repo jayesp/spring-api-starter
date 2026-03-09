@@ -15,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import java.util.Map;
 import java.util.UUID;
 
 @RestController
@@ -79,17 +78,17 @@ public class CartController {
     }
 
     @ExceptionHandler(CartNotFoundException.class)
-    public ResponseEntity<Map<String, String>> handleCartNotFound() {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error","Cart not found."));
+    public ResponseEntity<ErrorDto> handleCartNotFound() {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorDto("Cart not found."));
     }
 
     @ExceptionHandler(ProductNotFoundException.class)
-    public ResponseEntity<Map<String, String>> handleProductNotFound() {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Map.of("error","Product not found."));
+    public ResponseEntity<ErrorDto> handleProductNotFound() {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ErrorDto("Product not found."));
     }
 
     @ExceptionHandler(ProductNotFoundInCartException.class)
-    public ResponseEntity<Map<String, String>> handleProductNotFoundInCart() {
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Map.of("error","Product not found in the cart."));
+    public ResponseEntity<ErrorDto> handleProductNotFoundInCart() {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorDto("Product not found in the cart."));
     }
 }
