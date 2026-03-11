@@ -1,6 +1,5 @@
 package com.codewithmosh.store.dtos;
 
-import com.codewithmosh.store.entities.OrderItem;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -16,5 +15,4 @@ public class OrderDto {
     private LocalDateTime createdAt;
     private List<OrderItemDto> items;
     private BigDecimal totalPrice;
-
 }
