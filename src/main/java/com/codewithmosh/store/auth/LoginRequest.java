@@ -1,4 +1,4 @@
-package com.codewithmosh.store.dtos;
+package com.codewithmosh.store.auth;
 
 import com.codewithmosh.store.users.Lowercase;
 import jakarta.validation.constraints.*;
