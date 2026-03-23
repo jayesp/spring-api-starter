@@ -1,4 +1,4 @@
-package com.codewithmosh.store.dtos;
+package com.codewithmosh.store.users;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;

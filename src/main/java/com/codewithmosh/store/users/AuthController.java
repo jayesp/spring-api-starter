@@ -1,11 +1,8 @@
-package com.codewithmosh.store.controllers;
+package com.codewithmosh.store.users;
 
 import com.codewithmosh.store.config.JwtConfig;
 import com.codewithmosh.store.dtos.JwtResponse;
 import com.codewithmosh.store.dtos.LoginRequest;
-import com.codewithmosh.store.dtos.UserDto;
-import com.codewithmosh.store.mappers.UserMapper;
-import com.codewithmosh.store.repositories.UserRepository;
 import com.codewithmosh.store.services.JwtService;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletResponse;
